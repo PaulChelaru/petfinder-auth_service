@@ -8,9 +8,9 @@ async function initMongoDB(fastify) {
             serverSelectionTimeoutMS: 5000,
             socketTimeoutMS: 45000,
         });
-        
+
         fastify.decorate("mongoose", mongoose);
-        
+
         // Graceful shutdown
         fastify.addHook("onClose", async () => {
             await mongoose.connection.close();

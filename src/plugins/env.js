@@ -6,7 +6,7 @@ const schema = {
     required: [
         "PORT", "MONGO_URI", "JWT_SECRET",
         "USER_SERVICE_URL", "USER_SERVICE_API_KEY", "KAFKA_BROKERS",
-        "KAFKA_USERNAME", "KAFKA_PASSWORD"
+        "KAFKA_USERNAME", "KAFKA_PASSWORD", "PASSWORD_HASH_SALT",
     ],
     properties: {
         PORT: { type: "string", default: "3100" },
@@ -17,6 +17,7 @@ const schema = {
         KAFKA_BROKERS: { type: "string" },
         KAFKA_USERNAME: { type: "string" },
         KAFKA_PASSWORD: { type: "string" },
+        PASSWORD_HASH_SALT: { type: "string"},
     },
 };
 
