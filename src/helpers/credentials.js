@@ -22,8 +22,7 @@ const {
  */
 async function createCredentials(fastify, credentialsData) {
     try {
-        const saltRounds = parseInt(fastify.config.BCRYPT_SALT_ROUNDS) || 10;
-        const passwordHash = await bcrypt.hash(credentialsData.password, saltRounds);
+        const passwordHash = await bcrypt.hash(credentialsData.password, parseInt(fastify.config.BCRYPT_SALT_ROUNDS));
         const payload = {
             userId: credentialsData.userId,
             email: credentialsData.email,
